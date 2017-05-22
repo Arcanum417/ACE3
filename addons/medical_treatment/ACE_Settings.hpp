@@ -30,25 +30,18 @@ class ACE_Settings {
         typeName = "BOOL";
         value = 1;
     };
-	class EGVAR(medical,MedkitTimeModifier) {
+    class EGVAR(medical,MedkitTime) {
         category = ECSTRING(medical,Category_Medical);
-        displayName = CSTRING(MedkitTimeModifier);
-        description = CSTRING(MedkitTimeModifier_Description);
+        displayName = CSTRING(MedkitTime);
+        description = CSTRING(MedkitTime_Description);
         typeName = "SCALAR";
-        value = 1;
+        value = 0;
     };
-	class EGVAR(medical,HealTimeModifier) {
+    class EGVAR(medical,PAKTime) {
         category = ECSTRING(medical,Category_Medical);
-        displayName = CSTRING(HealTimeModifier);
-        description = CSTRING(HealTimeModifier_Description);
+        displayName = CSTRING(PAKTime);
+        description = CSTRING(PAKTime_Description);
         typeName = "SCALAR";
-        value = 5;
-    };
-	class EGVAR(medical,HealTimeMin) {
-        category = ECSTRING(medical,Category_Medical);
-        displayName = CSTRING(HealTimeMin);
-        description = CSTRING(HealTimeMin_Description);
-        typeName = "SCALAR";
-        value = 180;
+        value = 0;
     };
 };
