@@ -41,6 +41,10 @@ class ACE_Medical_StateMachine {
     class Unconscious {
         onState = QUOTE(DFUNC(handleStateUnconscious));
         onStateEntered = QUOTE([ARR_2(_this,(true))] call FUNC(setUnconscious));
+        class DeathAI {
+            targetState = "Dead";
+            condition = QUOTE(!isPlayer _this && {GVAR(unconsciousConditionAI)});
+        };
         class WakeUp {
             targetState = "Injured";
             condition = QUOTE(_this call FUNC(hasStableVitals));
@@ -60,6 +64,11 @@ class ACE_Medical_StateMachine {
         // Transition state for handling instant death
         // This state raises the next transition in the same frame
         onStateEntered = QUOTE(DFUNC(enteredStateFatalInjury));
+        class DeathAI {
+            events[] = {QGVAR(FatalInjuryInstantTransition)};
+            targetState = "Dead";
+            condition = QUOTE(!isPlayer _this && {GVAR(fatalInjuryConditionAI)});
+        };
         class SecondChance {
             events[] = {QGVAR(FatalInjuryInstantTransition)};
             targetState = "CardiacArrest";
