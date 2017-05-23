@@ -1,0 +1,1 @@
+.\make.py version increment_build increment_minor force checkexternal release
