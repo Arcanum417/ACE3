@@ -132,7 +132,7 @@ class GVAR(Actions) {
         allowedSelections[] = {"LeftArm", "RightArm", "LeftLeg", "RightLeg"};
         allowSelfTreatment = QEGVAR(medical,allowSelfIV);
         category = "advanced";
-        requiredMedic = 1;
+        requiredMedic = 0;
         treatmentTime = 12;
         items[] = {"ACE_bloodIV"};
         condition = "";
