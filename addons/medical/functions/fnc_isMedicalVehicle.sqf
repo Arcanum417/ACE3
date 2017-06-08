@@ -5,7 +5,7 @@
  * Arguments:
  * 0: The Vehicle <OBJECT>
  *
- * ReturnValue:
+ * Return Value:
  * Is in of medic class <BOOL>
  *
  * Example:
@@ -13,6 +13,7 @@
  *
  * Public: Yes
  */
+
 #include "script_component.hpp"
 
 params ["_vehicle"];

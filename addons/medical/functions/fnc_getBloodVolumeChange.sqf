@@ -10,6 +10,9 @@
  * ReturnValue:
  * Blood volume change (liters per second) <NUMBER>
  *
+ * Example:
+ * [bob, true] call ACE_medical_fnc_getBloodVolumeChange
+ *
  * Public: No
  */
 #include "script_component.hpp"
