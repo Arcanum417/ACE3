@@ -12,7 +12,11 @@ class ACE_Medical_StateMachine {
         };
         class CriticalInjuryOrVitals {
             targetState = "Unconscious";
-            events[] = {QGVAR(CriticalInjury), QGVAR(CriticalVitals)};
+            events[] = {QGVAR(CriticalInjury), QGVAR(CriticalVitals), QGVAR(knockOut)};
+        };
+        class FatalVitals {
+            targetState = "CardiacArrest";
+            events[] = {QGVAR(FatalVitals)};
         };
         class FatalInjury {
             targetState = "FatalInjury";
@@ -27,7 +31,7 @@ class ACE_Medical_StateMachine {
         };
         class CriticalInjuryOrVitals {
             targetState = "Unconscious";
-            events[] = {QGVAR(CriticalInjury), QGVAR(CriticalVitals)};
+            events[] = {QGVAR(CriticalInjury), QGVAR(CriticalVitals), QGVAR(knockOut)};
         };
         class FatalVitals {
             targetState = "CardiacArrest";
@@ -40,7 +44,7 @@ class ACE_Medical_StateMachine {
     };
     class Unconscious {
         onState = QUOTE(DFUNC(handleStateUnconscious));
-        onStateEntered = QUOTE([ARR_2(_this,(true))] call FUNC(setUnconscious));
+        onStateEntered = QUOTE([ARR_2(_this,(true))] call FUNC(setUnconsciousStatemachine));
         class DeathAI {
             targetState = "Dead";
             condition = QUOTE(!isPlayer _this && {GVAR(unconsciousConditionAI)});
@@ -49,7 +53,7 @@ class ACE_Medical_StateMachine {
             targetState = "Injured";
             condition = QUOTE(_this call FUNC(hasStableVitals));
             events[] = {QGVAR(WakeUp)};
-            onTransition = QUOTE([ARR_2(_this,(false))] call FUNC(setUnconscious));
+            onTransition = QUOTE([ARR_2(_this,(false))] call FUNC(setUnconsciousStatemachine));
         };
         class FatalTransitions {
             targetState = "CardiacArrest";
