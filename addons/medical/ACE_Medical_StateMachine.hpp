@@ -103,6 +103,6 @@ class ACE_Medical_StateMachine {
         };
     };
     class Dead {
-        onStateEntered = "[_this, false] call ace_medical_fnc_setUnconscious;_this setDamage 1"; // killing a unit also exits the state machine for this unit
+        onStateEntered = "[_this, false] call ace_medical_fnc_setUnconsciousStatemachine;_this setDamage 1"; // killing a unit also exits the state machine for this unit
     };
 };
