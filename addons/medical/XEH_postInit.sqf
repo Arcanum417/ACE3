@@ -1,5 +1,5 @@
 #define DEBUG_MODE_FULL
-//#define DEBUG_MODE_FULL_DISPLAY
+#define DEBUG_MODE_FULL_DISPLAY
 #include "script_component.hpp"
 
 ["ace_interactMenuClosed", {[objNull, 0] call FUNC(displayPatientInformation);}] call CBA_fnc_addEventHandler;

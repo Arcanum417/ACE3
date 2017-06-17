@@ -56,8 +56,14 @@ if (_show == 1) then {
         if (_target getVariable[QEGVAR(medical,isBleeding), false]) then {
             _genericMessages pushback [localize ELSTRING(medical,Status_Bleeding), [1, 0.1, 0.1, 1]];
         };
-        if (_target getVariable[QEGVAR(medical,hasLostBlood), 0] > 1) then {
-            _genericMessages pushback [localize ELSTRING(medical,Status_Lost_Blood), [1, 0.1, 0.1, 1]];
+        if (_target getVariable[QEGVAR(medical,hasLostBlood), 0] == 1) then {
+            _genericMessages pushback [localize ELSTRING(medical,Status_Lost_Blood2), [1, 0.1, 0.1, 1]];
+        };
+        if (_target getVariable[QEGVAR(medical,hasLostBlood), 0] == 2) then {
+            _genericMessages pushback [localize ELSTRING(medical,Status_Lost_Blood3), [1, 0.1, 0.1, 1]];
+        };
+        if (_target getVariable[QEGVAR(medical,hasLostBlood), 0] == 3) then {
+            _genericMessages pushback [localize ELSTRING(medical,Status_Lost_Blood4), [1, 0.1, 0.1, 1]];
         };
 
         if (((_target getVariable [QEGVAR(medical,tourniquets), [0,0,0,0,0,0]]) select _selectionN) > 0) then {

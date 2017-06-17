@@ -861,19 +861,17 @@
             <English>In severe pain</English>
             <German>Hat starke Schmerzen</German>
         </Key>
-        <Key ID="STR_ACE_Medical_Status_Lost_Blood">
-            <English>Lost a lot of Blood</English>
-            <German>Hat eine große Menge Blut verloren</German>
-            <Russian>Большая кровопотеря</Russian>
-            <Spanish>Mucha sangre perdida</Spanish>
-            <French>A perdu beaucoup de sang</French>
-            <Polish>Stracił dużo krwi</Polish>
-            <Czech>Ztratil hodně krve</Czech>
-            <Hungarian>Sok vért vesztett</Hungarian>
-            <Italian>Ha perso parecchio sangue</Italian>
-            <Portuguese>Perdeu muito sangue</Portuguese>
-            <Japanese>大量出血している</Japanese>
-            <Korean>많은 양의 혈액을 잃음</Korean>
+        <Key ID="STR_ACE_Medical_Status_Lost_Blood2">
+            <English>Lost some blood Class II Hemorrhage</English>
+            <Czech>Ztratil nějakou krev Class II Hemorrhage</Czech>
+        </Key>
+        <Key ID="STR_ACE_Medical_Status_Lost_Blood3">
+            <English>Lost a lot of blood Class III Hemorrhage</English>
+            <Czech>Ztratil hodně krve Class III Hemorrhage</Czech>
+        </Key>
+        <Key ID="STR_ACE_Medical_Status_Lost_Blood4">
+            <English>Lost a massive amount of blood Class IV Hemorrhage</English>
+            <Czech>Ztratil masivně mnoho krve Class IV Hemorrhage</Czech>
         </Key>
         <Key ID="STR_ACE_Medical_Status_Tourniquet_Applied">
             <English>Tourniquet [CAT]</English>
