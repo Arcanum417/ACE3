@@ -44,8 +44,14 @@ _unit setVariable  [QGVAR(bloodVolume), _bloodVolume, _syncValues];
 // Set variables for synchronizing information across the net
 if (_bloodVolume < BLOOD_VOLUME_CLASS_1_HEMORRHAGE) then {
     if (_bloodVolume < BLOOD_VOLUME_CLASS_3_HEMORRHAGE) then {
-        if (_unit getVariable [QGVAR(hasLostBlood), 0] != 2) then {
-            _unit setVariable [QGVAR(hasLostBlood), 2, true];
+        if (_bloodVolume < BLOOD_VOLUME_CLASS_4_HEMORRHAGE) then {
+            if (_unit getVariable [QGVAR(hasLostBlood), 0] != 3) then {
+                _unit setVariable [QGVAR(hasLostBlood), 3, true];
+            };
+        } else {
+            if (_unit getVariable [QGVAR(hasLostBlood), 0] != 2) then {
+                _unit setVariable [QGVAR(hasLostBlood), 2, true];
+            };
         };
     } else {
         if (_unit getVariable [QGVAR(hasLostBlood), 0] != 1) then {
