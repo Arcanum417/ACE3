@@ -1,4 +1,5 @@
 #define DEBUG_MODE_FULL
+//#define DEBUG_MODE_FULL_DISPLAY
 #include "script_component.hpp"
 
 ["ace_interactMenuClosed", {[objNull, 0] call FUNC(displayPatientInformation);}] call CBA_fnc_addEventHandler;
@@ -32,7 +33,7 @@ if (!hasInterface) exitWith {};
     linearConversion [0, 1, _pain, 1, 5, true];
 }] call EFUNC(common,arithmeticSetSource);
 
-#ifdef DEBUG_MODE_FULL
+#ifdef DEBUG_MODE_FULL_DISPLAY
     [] call FUNC(dev_watchMedicalStats);
 
     [{!isNull findDisplay 46}, {
