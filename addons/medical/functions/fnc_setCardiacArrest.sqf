@@ -28,4 +28,3 @@ _unit setVariable [QGVAR(heartRate), 0, true];
 
 [_unit, true] call FUNC(setUnconsciousStatemachine);
 
-private _timeInCardiacArrest = 120 + round(random(600));
