@@ -214,7 +214,7 @@ class CfgWeapons {
         descriptionShort = CSTRING(Med_Kit_Desc_Short);
         descriptionUse = CSTRING(Med_Kit_Desc_Use);
         class ItemInfo: InventoryItem_Base_F {
-            mass = 20;
+            mass = 10;
         };
     };
     class ACE_personalAidKit: ACE_ItemCore {
