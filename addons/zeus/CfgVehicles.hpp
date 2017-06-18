@@ -214,6 +214,13 @@ class CfgVehicles {
         function = QFUNC(moduleUnconscious);
         icon = QPATHTOF(UI\Icon_Module_Zeus_Unconscious_ca.paa);
     };
+    class GVAR(moduleFullHeal): GVAR(moduleBase) {
+        curatorCanAttach = 1;
+        category = QGVAR(Medical);
+        displayName = CSTRING(ModuleFullHeal_DisplayName);
+        function = QFUNC(moduleFullHeal);
+        icon = QPATHTOF(UI\Icon_Module_Zeus_Medic_ca.paa);
+    };
     class GVAR(AddFullArsenal): GVAR(moduleBase) {
         curatorCanAttach = 1;
         category = QGVAR(Utility);

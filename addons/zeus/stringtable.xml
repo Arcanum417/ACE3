@@ -534,6 +534,9 @@
             <Japanese>気絶をトグル</Japanese>
             <Korean>기절 토글</Korean>
         </Key>
+        <Key ID="STR_ACE_Zeus_ModuleFullHeal_DisplayName">
+            <English>Full Heal</English>
+        </Key>
         <Key ID="STR_ACE_Zeus_ModuleSearchArea_DisplayName">
             <English>Search Area</English>
             <French>Chercher la zone</French>

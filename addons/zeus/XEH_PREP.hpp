@@ -24,6 +24,7 @@ PREP(moduleSuppressiveFireLocal);
 PREP(moduleSurrender);
 PREP(moduleTeleportPlayers);
 PREP(moduleUnconscious);
+PREP(moduleFullHeal);
 PREP(moduleZeusSettings);
 PREP(showMessage);
 PREP(ui_attributeCargo);
