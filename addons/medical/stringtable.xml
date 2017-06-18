@@ -860,6 +860,7 @@
         <Key ID="STR_ACE_Medical_Status_SeverePain">
             <English>In severe pain</English>
             <German>Hat starke Schmerzen</German>
+            <Czech>Ve vážných bolestech</Czech>
         </Key>
         <Key ID="STR_ACE_Medical_Status_Lost_Blood2">
             <English>Lost some blood Class II Hemorrhage</English>
@@ -1199,7 +1200,7 @@
             <French>Auto-injecteur d'épinéphrine</French>
             <Polish>Autostrzykawka EpiPen</Polish>
             <German>Epiniphrin-Autoinjektor</German>
-            <Czech>Auto-adrenalin</Czech>
+            <Czech>Auto-epinefrin</Czech>
             <Hungarian>Epinefrin autoinjektor</Hungarian>
             <Italian>Autoiniettore di adrenalina</Italian>
             <Portuguese>Auto-injetor de epinefrina</Portuguese>
