@@ -26,6 +26,6 @@ private _treattime = 0;
 if (EGVAR(medical,MedkitTime) > 0) then {
     _treattime = EGVAR(medical,MedkitTime);
 } else {
-    _treattime = 10 max (_totalDamage * 5) min 180;
+    _treattime = 30 max (_totalDamage * 5) min 180;
 };
 _treattime
