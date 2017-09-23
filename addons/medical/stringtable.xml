@@ -4626,8 +4626,20 @@
         <Key ID="STR_ACE_Medical_MedicalSettings_allowUnconsciousAnimationOnTreatment_Description">
             <English>Allow Unconscious Animation on Treatment.</English>
         </Key>
+        <Key ID="STR_ACE_Medical_openLid">
+            <English>Open lid</English>
+            <German>Deckel aufklappen</German>
+            <Japanese>フタをあける</Japanese>
+            <Italian>Apri lid</Italian>
+        </Key>
         <Key ID="STR_ACE_Medical_MedicalSettings_spontaneousWakeUpChance_DisplayName">
             <English>Unconscious Wake Up Chance</English>
+        </Key>
+        <Key ID="STR_ACE_Medical_closeLid">
+            <English>Close lid</English>
+            <German>Deckel zuklappen</German>
+            <Japanese>フタをしめる</Japanese>
+            <Italian>Chiudi lid</Italian>
         </Key>
         <Key ID="STR_ACE_Medical_MedicalSettings_spontaneousWakeUpChance_Description">
             <English>Probablity that a unit with stable vitals will wake up from unconscious [Checked every 15 sec]</English>
