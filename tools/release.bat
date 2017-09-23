@@ -1,1 +1,1 @@
-.\make.py version increment_build increment_patch force checkexternal release
+.\make.py version force checkexternal release
