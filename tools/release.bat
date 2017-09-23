@@ -1,1 +1,1 @@
-.\make.py version force checkexternal release
+.\make.py version force release
