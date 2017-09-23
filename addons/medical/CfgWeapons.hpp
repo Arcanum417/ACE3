@@ -213,7 +213,7 @@ class CfgWeapons {
         picture = QPATHTOF(ui\items\personal_aid_kit_x_ca.paa); // todo: new picture
         descriptionShort = CSTRING(Med_Kit_Desc_Short);
         descriptionUse = CSTRING(Med_Kit_Desc_Use);
-        class ItemInfo: InventoryItem_Base_F {
+        class ItemInfo: CBA_MiscItem_ItemInfo {
             mass = 10;
         };
     };
