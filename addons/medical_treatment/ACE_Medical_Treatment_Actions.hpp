@@ -282,7 +282,7 @@ class GVAR(Actions) {
         displayName = ECSTRING(medical,Use_Aid_Kit);
         displayNameProgress = ECSTRING(medical,TreatmentAction);
         category = "advanced";
-        condition = "true";
+        condition = QUOTE(_target call EFUNC(medical,isInStableCondition));
         items[] = {"ACE_personalAidKit"};
         treatmentLocations[] = {QEGVAR(medical,useLocation_PAK)};
         requiredMedic = QEGVAR(medical,medicSetting_PAK);
@@ -303,7 +303,6 @@ class GVAR(Actions) {
     };
     class MedKit: PersonalAidKit {
         displayName = ECSTRING(medical,Use_Med_Kit);
-		condition = QUOTE(_target call EFUNC(medical,isInStableCondition));
         items[] = {"ACE_medKit"};
         treatmentLocations[] = {QEGVAR(medical,useLocation_MedKit)};
         requiredMedic = QEGVAR(medical,medicSetting_MedKit);
