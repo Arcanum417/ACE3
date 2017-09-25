@@ -3808,6 +3808,8 @@
             <Italian>Solo dottori</Italian>
             <Japanese>医師のみ</Japanese>
             <Korean>오직 의사만</Korean>
+            <Chinesesimp>只限军医</Chinesesimp>
+            <Chinese>只限軍醫</Chinese>
         </Key>
         <Key ID="STR_ACE_Medical_MedicalSettings_consumeItem_Medkit_DisplayName">
             <English>Remove Medkit on use</English>
@@ -4127,6 +4129,7 @@
             <Italian>Cura Hitpoints completamente bendati</Italian>
             <French>Soigner les plaies entièrement bandées.</French>
             <Japanese>包帯によりヒットポイントを完全に回復する</Japanese>
+            <Korean>붕대를 감아서 체력을 회복</Korean>
         </Key>
         <Key ID="STR_ACE_Medical_BasicMedicalSettings_Module_Description">
             <English>Configure the treatment settings from ACE Basic Medical</English>
@@ -4637,6 +4640,12 @@
         </Key>
         <Key ID="STR_ACE_Medical_MedicalSettings_allowUnconsciousAnimationOnTreatment_Description">
             <English>Allow Unconscious Animation on Treatment.</English>
+        </Key>
+        <Key ID="STR_ACE_Medical_MedicalSettings_spontaneousWakeUpChance_DisplayName">
+            <English>Unconscious Wake Up Chance</English>
+        </Key>
+        <Key ID="STR_ACE_Medical_MedicalSettings_spontaneousWakeUpChance_Description">
+            <English>Probablity that a unit with stable vitals will wake up from unconscious [Checked every 15 sec]</English>
         </Key>
         <Key ID="STR_ACE_Medical_openLid">
             <English>Open lid</English>
