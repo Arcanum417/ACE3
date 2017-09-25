@@ -132,6 +132,20 @@ class ACE_Settings {
         value = 30;
         typeName = "SCALAR";
     };
+    class GVAR(cardiacArrestTimeHigh) {
+        category = CSTRING(Category_Medical);
+        displayName = CSTRING(MedicalSettings_cardiacArrestTimeHigh_DisplayName);
+        description = CSTRING(MedicalSettings_cardiacArrestTimeHigh_Description);
+        value = 30;
+        typeName = "SCALAR";
+    };
+    class GVAR(cardiacArrestTimeLow) {
+        category = CSTRING(Category_Medical);
+        displayName = CSTRING(MedicalSettings_cardiacArrestTimeLow_DisplayName);
+        description = CSTRING(MedicalSettings_cardiacArrestTimeLow_Description);
+        value = 30;
+        typeName = "SCALAR";
+    };
     class GVAR(medicSetting_PainVisualization) {
         category = CSTRING(Category_Medical);
         displayName = CSTRING(MedicalSettings_medicSetting_PainVisualization_DisplayName);

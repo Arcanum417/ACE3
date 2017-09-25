@@ -15,9 +15,11 @@
 params ["_unit"];
 
 private _time = GVAR(cardiacArrestTime);
-_time = _time + random [_time*-0.1, 0, _time*0.1];
+private _time_high = GVAR(cardiacArrestTimeHigh);
+private _time_low = GVAR(cardiacArrestTimeLow);
+_time_final = random [_time_low, _time, _time_high];
 
-_unit setVariable [QGVAR(cardiacArrestTime), _time];
+_unit setVariable [QGVAR(cardiacArrestTime), _time_final];
 _unit setVariable [QGVAR(cardiacArrestStart), CBA_missionTime];
 
 [_unit] call FUNC(setCardiacArrest);

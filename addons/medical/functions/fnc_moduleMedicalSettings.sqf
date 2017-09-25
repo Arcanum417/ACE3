@@ -39,6 +39,8 @@ if !(_activated) exitWith {};
 [_logic, QGVAR(unconsciousConditionAI), "unconsciousConditionAI"] call EFUNC(common,readSettingFromModule);
 
 [_logic, QGVAR(cardiacArrestTime), "cardiacArrestTime"] call EFUNC(common,readSettingFromModule);
+[_logic, QGVAR(cardiacArrestTimeHigh), "cardiacArrestTimeHigh"] call EFUNC(common,readSettingFromModule);
+[_logic, QGVAR(cardiacArrestTimeLow), "cardiacArrestTimeLow"] call EFUNC(common,readSettingFromModule);
 [_logic, QGVAR(medicSetting_PainVisualization), "painVisualization"] call EFUNC(common,readSettingFromModule);
 [_logic, QGVAR(medicSetting_Epi), "medicSetting_Epi"] call EFUNC(common,readSettingFromModule);
 [_logic, QGVAR(medicSetting_Medkit), "medicSetting_Medkit"] call EFUNC(common,readSettingFromModule);

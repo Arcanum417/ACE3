@@ -147,6 +147,18 @@ class CfgVehicles {
                 defaultValue = 30;
                 typeName = "SCALAR";
             };
+            class cardiacArrestTimeHigh {
+                displayName = CSTRING(MedicalSettings_cardiacArrestTimeHigh_DisplayName);
+                description = CSTRING(MedicalSettings_cardiacArrestTimeHigh_Description);
+                defaultValue = 30;
+                typeName = "SCALAR";
+            };
+            class cardiacArrestTimeLow {
+                displayName = CSTRING(MedicalSettings_cardiacArrestTimeLow_DisplayName);
+                description = CSTRING(MedicalSettings_cardiacArrestTimeLow_Description);
+                defaultValue = 30;
+                typeName = "SCALAR";
+            };
             class painVisualization {
                 displayName = CSTRING(MedicalSettings_medicSetting_PainVisualization_DisplayName);
                 description = CSTRING(MedicalSettings_medicSetting_PainVisualization_Description);

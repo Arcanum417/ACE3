@@ -3417,7 +3417,19 @@
         <Key ID="STR_ACE_Medical_MedicalSettings_cardiacArrestTime_DisplayName">
             <English>Cardiac Arrest time(s)</English>
         </Key>
+        <Key ID="STR_ACE_Medical_MedicalSettings_cardiacArrestTimeHigh_DisplayName">
+            <English>Cardiac Arrest time High</English>
+        </Key>
+        <Key ID="STR_ACE_Medical_MedicalSettings_cardiacArrestTimeLow_DisplayName">
+            <English>Cardiac Arrest time Low</English>
+        </Key>
         <Key ID="STR_ACE_Medical_MedicalSettings_cardiacArrestTime_Description">
+            <English>Defines how long it takes to die from cardiac arrest?</English>
+        </Key>
+        <Key ID="STR_ACE_Medical_MedicalSettings_cardiacArrestTimeHigh_Description">
+            <English>Defines how long it takes to die from cardiac arrest?</English>
+        </Key>
+        <Key ID="STR_ACE_Medical_MedicalSettings_cardiacArrestTimeLow_Description">
             <English>Defines how long it takes to die from cardiac arrest?</English>
         </Key>
         <Key ID="STR_ACE_Medical_MedicalSettings_bleedingCoefficient_DisplayName">
