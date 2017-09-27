@@ -1,1 +1,1 @@
-.\make.py version force release
+.\make.py version increment_patch force release
