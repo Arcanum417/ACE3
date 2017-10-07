@@ -23,5 +23,6 @@ params ["_unit", ["_reason", "unknown"]];
 
 private _lastShooter = _unit getVariable [QEGVAR(medical_engine,lastShooter), objNull];
 private _lastInstigator = _unit getVariable [QEGVAR(medical_engine,lastInstigator), objNull];
+[_unit, false] call ace_medical_fnc_setUnconsciousStatemachine;
 
 ["ace_killed", [_unit, _reason, _lastShooter, _lastInstigator]] call CBA_fnc_globalEvent;
