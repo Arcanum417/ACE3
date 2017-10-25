@@ -445,7 +445,7 @@ class CfgAmmo {
     };
     class ACE_338_Ball : B_338_Ball {
         timeToLive=10;
-        airFriction=-0.00053585;
+        airFriction=-0.00055706;
         typicalSpeed=826;
         ACE_caliber=8.585;
         ACE_bulletLength=43.18;
@@ -552,6 +552,10 @@ class CfgAmmo {
         ACE_dragModel=1;
         ACE_muzzleVelocities[]={820};
         ACE_barrelLengths[]={728.98};
+    };
+    class B_127x108_APDS: B_127x108_Ball {
+        typicalSpeed = 820;
+        airFriction = -0.00065098;
     };
     class B_45ACP_Ball : BulletBase {
         airFriction=-0.00082143;
