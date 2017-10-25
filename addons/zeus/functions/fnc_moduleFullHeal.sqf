@@ -40,9 +40,9 @@ if (isNil QEFUNC(medical,setUnconscious)) then {
                 [LSTRING(OnlyAlive)] call FUNC(showMessage);
             } else {
                 [_unit] call ace_medical_fnc_handleRespawn;  
-                [_unit, true, 10e10] call ace_medical_fnc_setUnconscious;
                 [_unit, false, 10e10] call ace_medical_fnc_setUnconscious;
                 [_logic,_unit] call ace_medical_treatment_fnc_treatmentFullHeal;
+				[_unit, false, 10e10] call ace_medical_fnc_setUnconscious;
             };
         };
     };
