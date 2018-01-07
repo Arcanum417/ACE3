@@ -30,6 +30,7 @@ class ACE_Settings {
         description = CSTRING(MedicalSettings_bleedingCoefficient_Description);
         typeName = "SCALAR";
         value = 1;
+		sliderSettings[] = {0, 25, 1, 1};
     };
     class GVAR(painCoefficient) {
         category = CSTRING(Category_Medical);
@@ -37,6 +38,7 @@ class ACE_Settings {
         description = CSTRING(MedicalSettings_painCoefficient_Description);
         typeName = "SCALAR";
         value = 1;
+		sliderSettings[] = {0, 25, 1, 1};
     };
     class GVAR(advancedBandages) {
         category = CSTRING(Category_Medical);
@@ -95,6 +97,7 @@ class ACE_Settings {
         description = CSTRING(MedicalSettings_playerDamageThreshold_Description);
         typeName = "SCALAR";
         value = 1.05;
+		sliderSettings[] = {0, 25, 1.05, 2};
     };
     class GVAR(AIDamageThreshold) {
         category = CSTRING(Category_Medical);
@@ -102,6 +105,7 @@ class ACE_Settings {
         description = CSTRING(MedicalSettings_AIDamageThreshold_Description);
         typeName = "SCALAR";
         value = 1.05;
+		sliderSettings[] = {0, 25, 1.05, 2};
     };
     class GVAR(fatalInjuryCondition) {
         category = CSTRING(Category_Medical);
@@ -131,6 +135,7 @@ class ACE_Settings {
         description = CSTRING(MedicalSettings_cardiacArrestTime_Description);
         value = 30;
         typeName = "SCALAR";
+		sliderSettings[] = {1, 3600, 30, 0};
     };
     class GVAR(cardiacArrestTimeHigh) {
         category = CSTRING(Category_Medical);
@@ -138,6 +143,7 @@ class ACE_Settings {
         description = CSTRING(MedicalSettings_cardiacArrestTimeHigh_Description);
         value = 30;
         typeName = "SCALAR";
+		sliderSettings[] = {1, 3600, 30, 0};
     };
     class GVAR(cardiacArrestTimeLow) {
         category = CSTRING(Category_Medical);
@@ -145,6 +151,7 @@ class ACE_Settings {
         description = CSTRING(MedicalSettings_cardiacArrestTimeLow_Description);
         value = 30;
         typeName = "SCALAR";
+		sliderSettings[] = {1, 3600, 30, 0};
     };
     class GVAR(medicSetting_PainVisualization) {
         category = CSTRING(Category_Medical);
@@ -248,6 +255,7 @@ class ACE_Settings {
         description = CSTRING(MedicalSettings_remainingDamage_Medkit_Description);
         typeName = "SCALAR";
         value = 0.1;
+		sliderSettings[] = {0, 1, 0.1, 2};
     };
     class GVAR(allowUnconsciousAnimationOnTreatment) {
         category = CSTRING(Category_Medical);
@@ -285,5 +293,6 @@ class ACE_Settings {
         description = CSTRING(MedicalSettings_spontaneousWakeUpChance_Description);
         typeName = "SCALAR";
         value = 0;
+		sliderSettings[] = {0, 1, 0, 2};
     };
 };

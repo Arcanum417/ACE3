@@ -21,7 +21,8 @@ class ACE_Settings {
         displayName = CSTRING(litterCleanUpDelay);
         description = CSTRING(litterCleanUpDelay_Description);
         typeName = "SCALAR";
-        value = 0;
+        value = 60;
+		sliderSettings[] = {1, 3600, 60, 0};
     };
     class EGVAR(medical,CPRcreatesPulse) {
         category = ECSTRING(medical,Category_Medical);
@@ -36,6 +37,7 @@ class ACE_Settings {
         description = CSTRING(MedkitTime_Description);
         typeName = "SCALAR";
         value = 0;
+		sliderSettings[] = {0, 3600, 0, 0};
     };
     class EGVAR(medical,PAKTime) {
         category = ECSTRING(medical,Category_Medical);
@@ -43,5 +45,6 @@ class ACE_Settings {
         description = CSTRING(PAKTime_Description);
         typeName = "SCALAR";
         value = 0;
+		sliderSettings[] = {0, 3600, 0, 0};
     };
 };
