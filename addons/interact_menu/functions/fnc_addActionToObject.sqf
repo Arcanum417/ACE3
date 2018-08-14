@@ -15,7 +15,7 @@
  * Example:
  * [cursorTarget, 0, ["ACE_TapShoulderRight"],VulcanPinchAction] call ace_interact_menu_fnc_addActionToObject;
  *
- * Public: No
+ * Public: Yes
  */
 #include "script_component.hpp"
 
@@ -29,6 +29,13 @@ private _actionList = _object getVariable [_varName, []];
 
 if (_actionList isEqualTo []) then {
     _object setVariable [_varName, _actionList];
+};
+
+// Ensure the config menu was compiled first
+if (_typeNum == 0) then {
+    [_object] call FUNC(compileMenu);
+} else {
+    [_object] call FUNC(compileMenuSelfAction);
 };
 
 if (_parentPath isEqualTo ["ACE_MainActions"]) then {
