@@ -20,7 +20,7 @@
 
 params ["_unit", "_painSupressAdjustment", "_deltaT", "_syncValue"];
 
-_unit setVariable [VAR_PAIN_SUPP, 0 max _painSupressAdjustment, _syncValue];
+// _unit setVariable [VAR_PAIN_SUPP, 0 max _painSupressAdjustment, _syncValue];
 
 // Handle continuous pain reduction
 private _pain = GET_PAIN(_unit);
