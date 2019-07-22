@@ -69,42 +69,57 @@ private _tourniquets = GET_TOURNIQUETS(_unit);
 if (_tourniquetPain > 0) then {
     [_unit, _tourniquetPain] call EFUNC(medical_status,adjustPainLevel);
 };
+if (isNil QEGVAR(medical_treatment,advancedMedication) || {!EGVAR(medical_treatment,advancedMedication)}) then {
+	//Simple meds, just periodicly call
+	
+	private _heartRate = [_unit, 0, _deltaT, _syncValues] call FUNC(updateHeartRate);
+	[_unit, 0, _deltaT, _syncValues] call FUNC(updatePeripheralResistance);
+	
+	private _bloodPressure = GET_BLOOD_PRESSURE(_unit);
+	_unit setVariable [VAR_BLOOD_PRESS, _bloodPressure, _syncValues];
+	
+	_syncValues = true;
+	private _painSupress = _unit getVariable [VAR_PAIN_SUPP, 0];
+	[_unit, _painSupress, _deltaT, _syncValues] call FUNC(updatePainSuppress);
+} else {
+	// Get Medication Adjustments, advanced meds only:
+	private _hrTargetAdjustment = 0;
+	private _painSupressAdjustment = 0;
+	private _peripheralResistanceAdjustment = 0;
+	private _adjustments = _unit getVariable [VAR_MEDICATIONS,[]];
 
-// Get Medication Adjustments:
-private _hrTargetAdjustment = 0;
-private _painSupressAdjustment = 0;
-private _peripheralResistanceAdjustment = 0;
-private _adjustments = _unit getVariable [VAR_MEDICATIONS,[]];
+	if !(_adjustments isEqualTo []) then {
+		private _deleted = false;
+		{
+			_x params ["_medication", "_timeAdded", "_timeTillMaxEffect", "_maxTimeInSystem", "_hrAdjust", "_painAdjust", "_flowAdjust"];
+			private _timeInSystem = CBA_missionTime - _timeAdded;
+			if (_timeInSystem >= _maxTimeInSystem) then {
+				_deleted = true;
+				_adjustments set [_forEachIndex, objNull];
+			} else {
+				private _effectRatio = (((_timeInSystem / _timeTillMaxEffect) ^ 2) min 1) * (_maxTimeInSystem - _timeInSystem) / _maxTimeInSystem;
+				if (_hrAdjust != 0) then { _hrTargetAdjustment = _hrTargetAdjustment + _hrAdjust * _effectRatio; };
+				if (_painAdjust != 0) then { _painSupressAdjustment = _painSupressAdjustment + _painAdjust * _effectRatio; };
+				if (_hrAdjust != 0) then { _peripheralResistanceAdjustment = _peripheralResistanceAdjustment + _flowAdjust * _effectRatio; };
+			};
+		} forEach _adjustments;
 
-if !(_adjustments isEqualTo []) then {
-    private _deleted = false;
-    {
-        _x params ["_medication", "_timeAdded", "_timeTillMaxEffect", "_maxTimeInSystem", "_hrAdjust", "_painAdjust", "_flowAdjust"];
-        private _timeInSystem = CBA_missionTime - _timeAdded;
-        if (_timeInSystem >= _maxTimeInSystem) then {
-            _deleted = true;
-            _adjustments set [_forEachIndex, objNull];
-        } else {
-            private _effectRatio = (((_timeInSystem / _timeTillMaxEffect) ^ 2) min 1) * (_maxTimeInSystem - _timeInSystem) / _maxTimeInSystem;
-            if (_hrAdjust != 0) then { _hrTargetAdjustment = _hrTargetAdjustment + _hrAdjust * _effectRatio; };
-            if (_painAdjust != 0) then { _painSupressAdjustment = _painSupressAdjustment + _painAdjust * _effectRatio; };
-            if (_hrAdjust != 0) then { _peripheralResistanceAdjustment = _peripheralResistanceAdjustment + _flowAdjust * _effectRatio; };
-        };
-    } forEach _adjustments;
+		if (_deleted) then {
+			_unit setVariable [VAR_MEDICATIONS, _adjustments - [objNull], true];
+			_syncValues = true;
+		};
+	};
 
-    if (_deleted) then {
-        _unit setVariable [VAR_MEDICATIONS, _adjustments - [objNull], true];
-        _syncValues = true;
-    };
+	private _heartRate = [_unit, _hrTargetAdjustment, _deltaT, _syncValues] call FUNC(updateHeartRate);
+	[_unit, _painSupressAdjustment, _deltaT, _syncValues] call FUNC(updatePainSuppress);
+	[_unit, _peripheralResistanceAdjustment, _deltaT, _syncValues] call FUNC(updatePeripheralResistance);
+
+	private _bloodPressure = GET_BLOOD_PRESSURE(_unit);
+	_unit setVariable [VAR_BLOOD_PRESS, _bloodPressure, _syncValues];
 };
 
-private _heartRate = [_unit, _hrTargetAdjustment, _deltaT, _syncValues] call FUNC(updateHeartRate);
-[_unit, _painSupressAdjustment, _deltaT, _syncValues] call FUNC(updatePainSuppress);
-[_unit, _peripheralResistanceAdjustment, _deltaT, _syncValues] call FUNC(updatePeripheralResistance);
 
 private _bloodPressure = GET_BLOOD_PRESSURE(_unit);
-_unit setVariable [VAR_BLOOD_PRESS, _bloodPressure, _syncValues];
-
 _bloodPressure params ["_bloodPressureL", "_bloodPressureH"];
 
 // Statements are ordered by most lethal first.
